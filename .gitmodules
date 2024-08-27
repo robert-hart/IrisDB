@@ -1,0 +1,3 @@
+[submodule "GuidedDiffusion"]
+	path = GuidedDiffusion
+	url = https://github.com/robert-hart/GuidedDiffusion
