@@ -1,3 +1,6 @@
 [submodule "GuidedDiffusion"]
 	path = GuidedDiffusion
 	url = https://github.com/robert-hart/GuidedDiffusion
+[submodule "iris-evaluation"]
+	path = iris-evaluation
+	url = https://github.com/robert-hart/iris-evaluation.git
