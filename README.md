@@ -4,3 +4,11 @@ This repository includes all necessiary code to replicate the work performed in 
 * GuidedDiffusion: This part of the repository includes the instructions for installing OpenAI's 'Guided Diffusion' framework; parameters for training our model and sampling from our model; and model fit statistics. Data is not included; however, it availible upon request.
 * iris-evaluation: The Python package for all analyses performed.
 * Data & Analyses: Coming soon
+
+# TODO
+
+* Convert from csv interpretation to JSON interpretation
+* Implement algorithms for decidability, SSIM, & 'linear' Hamming
+* Add calibrate routine
+* Final tidying up
+* Instructions
