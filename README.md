@@ -7,8 +7,8 @@ This repository includes all necessiary code to replicate the work performed in 
 
 # TODO
 
-* Convert from csv interpretation to JSON interpretation
-* Implement algorithms for decidability, SSIM, & 'linear' Hamming
-* Add calibrate routine
+* ~~Convert from csv interpretation to JSON interpretation~~
+* ~~Implement algorithms for decidability, SSIM, & 'linear' Hamming~~
+* ~~Add calibrate routine~~ not actually needed right now
 * Final tidying up
 * Instructions
