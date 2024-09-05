@@ -1,58 +1,48 @@
+
 # Training a Diffusion Model to Create Biometrically Unique Iris Textures
 
+![Technical Overview](dataset_tool/docs/recog_overview.png)
 
-
-
-
-
-
-# Sub-modules
+# Descriptions of Included Sub-Modules
 Two sub-modules are included in this repository. They are necessary for the replication of our results and are briefly described below.
 
+ -   **OpenAI's 'Guided Diffusion'** 
+		- The 'GuidedDiffusion' sub-module of this repository is our slightly modified fork of [OpenAI's 'Guided Diffusion' codebase](https://github.com/openai/guided-diffusion), which was prepared by OpenAI in conjunction with their paper: [Diffusion Models Beat GANS on Image Synthesis](http://arxiv.org/abs/2105.05233).
+		- This fork contains small modifications and additions to the codebase such as to facilitate the reproduction of diffusion results reported by 'Training a Diffusion Model to Create Biometrically Unique Iris Textures'. It is necessary to install in order to replicate our methods of model training and sampling.
+		- Bash scripts with our training parameters and sampling parameters can be found within the 'GuidedDiffusion' sub-module, and are called 'train.sh' and 'sample.sh', respectively. Before running these scripts, make sure to change file-paths and other parameters as instructed by each script's respective comments.
 
-* <strong>OpenAI's 'Guided Diffusion'</strong>
-The 'GuidedDiffusion' sub-module of this repository is our slightly modified fork of [OpenAI's 'Guided Diffusion' codebase](https://github.com/openai/guided-diffusion), which was prepared by OpenAI in conjunction with their paper: [Diffusion Models Beat GANS on Image Synthesis](http://arxiv.org/abs/2105.05233).
+- **'iris-evaluation'**
 
-This fork contains small modifications and additions to the codebase such as to facilitate the reproduction of diffusion results reported by 'Training a Diffusion Model to Create Biometrically Unique Iris Textures'. It is necessary to install in order to replicate our methods of model training and sampling.
+	 - The 'iris-evaluation' sub-module of this repository is a custom Python package written to conduct biometric analysis of iris textures. The specific iris recognition technique utilized by 'iris-evaluation' is that of Libor Masek, who improved upon Daugman's early iris recognition work by replacing the use of 2D Gabor Filters for feature extraction with 1D Log-Gabor Filters. 
+	 - 'iris-evaluation' utilizes a custom otsu threshold-based segmentation technique to separate concentric iris patterns from black backgrounds; Daugman's 'Rubber Sheet' model for normalization; and Hamming Distance to compare iris codes.
+	 - More details can be found in 'Training a Diffusion Model to Create Biometrically Unique Iris Textures'. Here we provide the package's code here for the purposes of inspection and replication.
+	 - **The 'iris-evaluation' Python package is only suitable for research purposes and provides a limited choice of methods for iris segmentation, iris normalization, feature extraction, and etc.**; however, it was designed such that other methods could be added as package modules in the future.
+	 - 'iris-evaluation' utilizes PyTorch and thus performs best on devices with Apple Silicon or NVIDIA GPUs. Performance on other hardware may vary.
 
-To install our fork of the Guided Diffusion Python package, run the following commands in your terminal:
+If you wish to install the contents of an individual sub-module by itself, instructions can be found within the respective sub-module.   
 
-```
-wget https://github.com/robert-hart/IrisDB-GuidedDiffusion/archive/refs/heads/main.zip
-unzip main.zip
-cd IrisDB-GuidedDiffusion-main
-pip install -e .
-```
 
-Bash scripts with our training parameters and sampling parameters can be found within the 'GuidedDiffusion' sub-module, and are called 'train.sh' and 'sample.sh', respectively. Before running these scripts, make sure to change file-paths and other parameters as instructed by each script's respective comments.
 
-## 'iris-evaluation'
-The 'iris-evaluation' sub-module of this repository is a custom Python package written to conduct biometric analysis upon iris textures. The specific iris recognition technique utilized by 'iris-evaluation' is that of Libor Masek, who improved upon Daugman's early iris recognition work by replacing the use of 2D Gabor Filters for feature extraction with 1D Log-Gabor Filters. 'iris-evaluation' utilizes a custom otsu threshold-based segmentation technique to separate concentric iris patterns from black backgrounds; Daugman's 'Rubber Sheet' model for normalization; and Hamming Distance to compare iris codes. More details can be found in 'Training a Diffusion Model to Create Biometrically Unique Iris Textures'; however, we provide the package's code here for the purposes of inspection and replication.
+# Descriptions of Repository Directories
 
-To install 'iris-evaluation', run the following commands in your terminal:
+This repository has three directories of its own whose contents are described below: 
 
-```
-wget https://github.com/robert-hart/iris-evaluation/archive/refs/heads/main.zip
-unzip main.zip
-cd iris-evaluation
-pip install -v .
-```
+ - **dataset_tool**
+	 - dataset_tool is a Python program that orchestrates modules from our 'iris-evaluation' package such as to seamlessly analyze and compare datasets of iris images. In other words, dataset_tool puts the contents of 'iris-evaluation' to work for the exact purposes of this paper in a way that is portable, human-readable, & repeatable.
+	 - dataset_tool is packaged with a simple GUI to help get analyses started. Further, sample sets of generated irises are available for those who wish to see how we used dataset_tool to compare datasets of irises.
+	 
+ - **Notebooks**
+	 - Rendered Juypter Notebooks of each analyses performed to generate paper figures.
+	
+ - **Scripts**
+	 - Miscellaneous scripts used for various parts of our work. 
 
-While this package is only suitable for research purposes and is limited in the methods available for iris segmentation, feature extraction, and etc., it was designed such that other methods could be added as package modules in the future.
+# Installation
 
-'iris-evaluation' utilizes PyTorch and thus performs best on devices with Apple Silicon or NVIDIA GPUs. Performance on other hardware may vary.
+Coming soon.
 
-# Folders
-This repository contains multiple folders whose contents are described below:
 
-## Iris_Recognition
-The code within the 'Iris_Recognition' folder utilizes modules from 'iris-evaluation' to compare datasets of iris images for the purposes of the paper. Replication instructions and a sample dataset can be found within the directory.
+## Data Disclaimer
 
-## Notebooks
-The Notebooks folder contains the rendered Jupyter Notebooks used to create all paper figures.
+While our code is freely available, our data is inherently sensitive and is therefore kept private. However, data may be available upon request on a case-by-case basis.
 
-## Scripts
-Within the 'Scripts' folder are miscellaneous scripts used for various parts of our work.
-
-# Data Disclaimer
-Due to the sensitive nature of the data used to carry out our analyses, data to use with this code will only be made available upon request.
