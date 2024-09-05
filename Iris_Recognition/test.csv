@@ -1,0 +1,18 @@
+﻿keys,values,description
+reference,/Users/roberthart/Documents/GitHub/iris-evaluation/data/reference/256_linear.npz,full path to reference image dataset as .npz
+comparison,/Users/roberthart/Documents/GitHub/iris-evaluation/data/comparison,path containing sample image dataset(s) as .npz
+verbose,1,
+gabor,1,
+comparison,1,
+pairwise,1,
+lpips,0,
+ssim,0,
+wavelength,18,
+octaves,1,
+threads,16,
+size_1,4,
+size_2,2,
+,,
+,,
+,,
+, ,
