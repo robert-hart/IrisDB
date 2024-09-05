@@ -1,8 +1,16 @@
+# Training a Diffusion Model to Create Biometrically Unique Iris Textures
+
+
+
+
+
+
+
 # Sub-modules
 Two sub-modules are included in this repository. They are necessary for the replication of our results and are briefly described below.
 
 
-## OpenAI's 'Guided Diffusion'
+* <strong>OpenAI's 'Guided Diffusion'</strong>
 The 'GuidedDiffusion' sub-module of this repository is our slightly modified fork of [OpenAI's 'Guided Diffusion' codebase](https://github.com/openai/guided-diffusion), which was prepared by OpenAI in conjunction with their paper: [Diffusion Models Beat GANS on Image Synthesis](http://arxiv.org/abs/2105.05233).
 
 This fork contains small modifications and additions to the codebase such as to facilitate the reproduction of diffusion results reported by 'Training a Diffusion Model to Create Biometrically Unique Iris Textures'. It is necessary to install in order to replicate our methods of model training and sampling.
