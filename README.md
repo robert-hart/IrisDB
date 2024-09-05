@@ -37,8 +37,8 @@ While this package is only suitable for research purposes and is limited in the 
 # Folders
 This repository contains multiple folders whose contents are described below:
 
-## Iris Recognition
-The code within the 'Iris_Recognition' folder utilizes modules from 'iris-evaluation' to generate data for biometric analyses of iris images. Instructions can be found within the directory itself.
+## Iris_Recognition
+The code within the 'Iris_Recognition' folder utilizes modules from 'iris-evaluation' to generate data for biometric analyses of iris images. Replication instructions can be found within the directory.
 
 ## Notebooks
 The Notebooks folder contains the rendered Jupyter Notebooks used to create all paper figures.
