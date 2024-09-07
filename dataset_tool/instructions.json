@@ -1,0 +1,1 @@
+"{\n  \"gabor_extraction\": true,\n  \"hamming_distance\": true,\n  \"wavelength\": 0,\n  \"verbose\": \"true\",\n  \"threads\": \"16\",\n  \"batchSize\": 0,\n  \"iris-evaluation_path\": \"saf\",\n  \"routine\": \"1\"\n}"

@@ -15,7 +15,6 @@ document.getElementById('routine').addEventListener('change', function() {
         feature_extraction(extraFieldsDiv, true);
         //extraction_options["routine"] = 3;
     }
-
 });
 
 document.getElementById('parameters_form').addEventListener('submit', function(event) {
@@ -47,7 +46,16 @@ document.getElementById('parameters_form').addEventListener('submit', function(e
     var json = JSON.stringify(extraction_options, null, 2);
     console.log(json);
 
-    downloadJSON(extraction_options, 'parameters');
+    fetch('http://localhost:8000', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(json),
+    })
+    .then(response => response.text())
+    .catch(error => console.error('Error:', error));
+
+    alert("INSTRUCTIONS SENT! CHECK YOUR TERMINAL! YOU MAY NOW CLOSE THIS TAB.");
+
 });
 
 
@@ -177,6 +185,7 @@ function hamming_distance(extraFieldsDiv) {
 }
 
 function downloadJSON(jsonData, filename) {
+
     const jsonString = JSON.stringify(jsonData, null, 2);
     const blob = new Blob([jsonString], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
