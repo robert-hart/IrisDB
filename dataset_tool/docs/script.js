@@ -1,3 +1,5 @@
+console.log(document.referrer);
+
 document.getElementById('routine').addEventListener('change', function() {
     
     var extraFieldsDiv = document.getElementById('conditional_fields');
