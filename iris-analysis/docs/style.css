@@ -61,3 +61,15 @@ select, input {
 	padding-top: 0.01%;
 }
 
+a {
+    color: #cfe6e8; /* Regular link color */
+}
+a:hover {
+    color: #f1f8f9 /* Color when hovered over */
+}
+a:visited {
+    color: #cfe6e8; /* Color after the link has been visited */
+}
+a:active {
+    color: #cfe6e8; /* Color after the link has been visited */
+}
