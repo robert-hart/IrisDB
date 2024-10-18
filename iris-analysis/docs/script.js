@@ -125,7 +125,6 @@ function feature_extraction(extraFieldsDiv, hamming) {
     extraFieldsDiv.appendChild(document.createElement('hr'));
 
     if (hamming === true){
-        //extraFieldsDiv.appendChild(document.createElement('br'))
         hamming_distance(extraFieldsDiv)
     }
 }

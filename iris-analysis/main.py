@@ -227,7 +227,6 @@ def main():
     json_dir = os.path.join(script_dir, 'iris-analysis.json')
     gui_dir = os.path.join(script_dir, "docs/gui.html")
     args = None
-    instructions = None
 
     #make sure requisite directories exist
     os.makedirs(os.path.join(script_dir, "data"), exist_ok=True)
@@ -259,12 +258,10 @@ def main():
             user_int = int(user_input)
             if user_int == 1:
                 GUIserver = SpecialServer(script_dir, gui_dir, json_dir)
-                instructions = GUIserver.instructions
             elif user_int == 2:
                 os.remove(json_dir)
                 GUIserver = SpecialServer(script_dir, gui_dir, json_dir)
                 GUIserver.launch()
-                instructions = GUIserver.instructions
             else:
                 exit_app(script_dir)
         except Exception as e:
@@ -282,7 +279,7 @@ def main():
             if int(user_input) == 1:
                 GUIserver = SpecialServer(script_dir, gui_dir, json_dir)
                 GUIserver.launch()
-                instructions = GUIserver.instructions
+                args = AnalysisConfig(f'{script_dir}/iris-analysis.json', script_dir)
             else:
                 #safe
                 exit_app(script_dir)
